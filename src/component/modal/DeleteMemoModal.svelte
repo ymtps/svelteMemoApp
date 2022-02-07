@@ -11,8 +11,8 @@
 	 * メモを削除
 	 */
 	function deleteMemo() {
-		const localStorageMemoList:string = localStorage.getItem("memoList");
-		const newMemoList:any[] = localStorageMemoList
+		const localStorageMemoList: string = localStorage.getItem("memoList");
+		const newMemoList: any[] = localStorageMemoList
 			? JSON.parse(localStorageMemoList)
 			: [];
 

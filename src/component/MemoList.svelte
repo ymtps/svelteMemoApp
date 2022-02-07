@@ -1,10 +1,10 @@
 <script lang="ts">
 	import {
+		screenType,
 		memoList,
 		showDeleteMemoModalFlg,
 		selectIndex,
 	} from "../store/common";
-	import { navigate } from "svelte-routing";
 
 	/**
 	 * メモ削除モーダルを表示
@@ -23,7 +23,7 @@
 	 */
 	function showMemoDetailPage(index: number) {
 		selectIndex.set(index);
-		navigate("/detail");
+		screenType.set(1);
 	}
 </script>
 

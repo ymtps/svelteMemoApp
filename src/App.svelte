@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Router, Route } from "svelte-routing";
+	import { screenType } from "./store/common";
 	import List from "./pages/List.svelte";
 	import Detail from "./pages/Detail.svelte";
 	import "./assets/css/reset.css";
@@ -13,10 +13,11 @@
 	}
 </style>
 
-<Router>
-	<main>
-		<h1>メモアプリ</h1>
-		<Route path="" component={List} />
-		<Route path="/detail" component={Detail} />
-	</main>
-</Router>
+<main>
+	<h1>メモアプリ</h1>
+	{#if $screenType === 0}
+		<List />
+	{:else if $screenType === 1}
+		<Detail />
+	{/if}
+</main>

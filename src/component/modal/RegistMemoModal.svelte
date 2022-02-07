@@ -3,18 +3,18 @@
 	import { memoList } from "../../store/common";
 
 	const dispatch = createEventDispatcher();
-	let memoTitle:string = "";
-	let memoContext:string = "";
+	let memoTitle: string = "";
+	let memoContext: string = "";
 
 	/**
 	 * メモを登録
 	 */
 	function registMemo() {
-		const localStorageMemoList:string = localStorage.getItem("memoList");
-		const newMemoList:any[] = localStorageMemoList
+		const localStorageMemoList: string = localStorage.getItem("memoList");
+		const newMemoList: any[] = localStorageMemoList
 			? JSON.parse(localStorageMemoList)
 			: [];
-		const now:Date = new Date();
+		const now: Date = new Date();
 
 		newMemoList.push({
 			title: memoTitle,

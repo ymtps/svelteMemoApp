@@ -1,23 +1,22 @@
 <script lang="ts">
-	import { memoList, selectIndex } from "../store/common";
-	import { navigate } from "svelte-routing";
+	import { memoList, screenType, selectIndex } from "../store/common";
 
-	let memoTitle:string = $memoList[$selectIndex].title;
-	let memoContext:string = $memoList[$selectIndex].context;
+	let memoTitle: string = $memoList[$selectIndex].title;
+	let memoContext: string = $memoList[$selectIndex].context;
 
 	/**
 	 * メモ一覧画面に戻る
 	 */
 	function backListPage() {
-		navigate("/");
+		screenType.set(0);
 	}
 
 	/**
 	 * メモを更新する
 	 */
 	function updateMemo() {
-		const localStorageMemoList:string = localStorage.getItem("memoList");
-		const newMemoList:any[] = localStorageMemoList
+		const localStorageMemoList: string = localStorage.getItem("memoList");
+		const newMemoList: any[] = localStorageMemoList
 			? JSON.parse(localStorageMemoList)
 			: [];
 
